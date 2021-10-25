@@ -1,4 +1,4 @@
-package com.netcracker.point.struct;
+package com.netcracker.struct;
 
 public class Circle {
     private Point point;
