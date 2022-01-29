@@ -1,0 +1,11 @@
+<div class="row">
+    <div *ngFor="let objectType of objectTypes" class="col-sm-6 col-lg-4 m-15px-tb">
+        <div class="card card-body media box-shadow-only-hover hover-top border-all-1 border-color-gray p-15px" >
+            <div class="p-20px-l media-body">
+                <h6 class="m-5px-tb">{{objectType?.name}}</h6>
+                <button [routerLink]="['/attribute', objectType?.id]" mat-button (click)="openDialog()" class="btn btn-primary btn-book">Атрибуты</button>
+                <button [routerLink]="['/type/child', objectType?.id]" mat-button (click)="openDialogObjectType()" class="btn btn-secondary margin-20px">Подкатегории</button>
+            </div>
+        </div>
+    </div>
+</div>

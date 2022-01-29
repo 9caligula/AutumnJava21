@@ -7,6 +7,7 @@ public enum SeasonService {
 
     private EnumMap<Month, Callable<Season>> enumMap;
 
+
     SeasonService() {
         enumMap = new EnumMap<>(Month.class);
 

@@ -1,0 +1,42 @@
+<div class="modal-content border-0" >
+    <div class="modal-header bg-info text-white">
+        <h5 class="modal-title text-white">Добавить атрибут</h5>
+        <button (click)="close()" type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="notes-box">
+            <div class="notes-content">
+                <form #myForm="ngForm" (ngSubmit)="onAddAttr(myForm)">
+                    <div class="form-group">
+                        <label>Название атрибута</label>
+                        <input autofocus class="form-control" ngModel name="nameAttr" type="text" minlength="25" placeholder="Атрибут" required/>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="!myForm.invalid" type="submit" class="btn btn-primary" style="float: right">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+<div class="modal-footer"></div>
+
+<div>
+    <div class="col-md-12 mb-3">
+        <div class="note-title">
+            <p>Список атрибутов</p>
+        </div>
+    </div>
+    <div *ngFor="let attr of attribute">
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{attr?.name}}
+                <button (click)="deleteAttribute(attr.id)" type="button" class="btn btn-danger" style="float: right">Удалить</button>
+            </li>
+        </ul>
+    </div>
+</div>
